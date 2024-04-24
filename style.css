@@ -90,19 +90,6 @@ html {
   animation: WheelRotate 0.5s linear infinite reverse;
 }
 
-/* CAR BODY WITH WHEELS */
-
-/* .wholecar .car{
-  z-index: 4;
-  left:100px
-}
-.wholecar .wheel1 img{
-  left: 500px;
-}
-.wholecar .wheel2 img{
-  left: 185px;
-} */
-
 /* BUTTONS */
 
 .buttons {
@@ -110,6 +97,7 @@ html {
   justify-content: center;
 }
 .forward {
+  cursor: pointer;
   height: 80px;
   background-image: url(right.jpg);
   background-size: cover;
@@ -121,6 +109,7 @@ html {
   left: 105vh;
 }
 .backward {
+  cursor: pointer;
   height: 80px;
   width: 90px;
   position: absolute;
