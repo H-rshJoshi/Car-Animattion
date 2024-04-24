@@ -1,0 +1,171 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* BACKGROUND */
+
+.backgroundImg img {
+  height: 1080px;
+  width: 2500px;
+  position: absolute;
+  z-index: 0;
+  background-repeat: repeat-x;
+  animation: none;
+}
+.backgroundImg img.play-forward {
+  animation: BackgroundLoop 4s linear infinite;
+}
+.backgroundImg img.play-backward {
+  animation: BackgroundLoop 4s linear infinite reverse;
+}
+
+/* ROAD */
+
+.road {
+  height: 15vh;
+  width: 302vh;
+  background-image: url(road.png);
+  position: absolute;
+  top: 91vh;
+  z-index: 1;
+  animation: none;
+}
+.road.play-animation-forward {
+  animation: roadLoop 2s linear infinite;
+}
+.road.play-animation-backward {
+  animation: roadLoop 2s linear reverse infinite;
+}
+
+/* CAR */
+
+.car {
+  height: 309px;
+  width: 552px;
+  background-image: url(carfinal.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 408px;
+  top: 585px;
+  z-index: 2;
+  animation: CarMoves 1.5s linear infinite;
+}
+
+/* FRONT WHEEL */
+
+.wheel1 img {
+  width: 122px;
+  position: absolute;
+  top: 770px;
+  left: 805px;
+  animation: none;
+  z-index: 3;
+}
+.wheel1 img.play-forward {
+  animation: WheelRotate 0.5s linear infinite;
+}
+.wheel1 img.play-backward {
+  animation: WheelRotate 0.5s linear infinite reverse;
+}
+
+/* BACK WHEEL */
+
+.wheel2 img {
+  width: 122px;
+  position: absolute;
+  top: 770px;
+  left: 492px;
+  animation: none;
+  z-index: 3;
+}
+.wheel2 img.play-forward {
+  animation: WheelRotate 0.5s linear infinite;
+}
+.wheel2 img.play-backward {
+  animation: WheelRotate 0.5s linear infinite reverse;
+}
+
+/* CAR BODY WITH WHEELS */
+
+/* .wholecar .car{
+  z-index: 4;
+  left:100px
+}
+.wholecar .wheel1 img{
+  left: 500px;
+}
+.wholecar .wheel2 img{
+  left: 185px;
+} */
+
+/* BUTTONS */
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+.forward {
+  height: 80px;
+  background-image: url(right.jpg);
+  background-size: cover;
+  width: 90px;
+  border-radius: 10px;
+  border: 1.5px solid red;
+  position: absolute;
+  top: 10vh;
+  left: 105vh;
+}
+.backward {
+  height: 80px;
+  width: 90px;
+  position: absolute;
+  border-radius: 10px;
+  border: 1.5px solid red;
+  background-image: url(left.jpg);
+  background-size: cover;
+  top: 10vh;
+  left: 80vh;
+}
+
+/* ANIMATIONS */
+
+@keyframes WheelRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes roadLoop {
+  100% {
+    transform: translateX(-100vh);
+  }
+}
+
+@keyframes BackgroundLoop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-550px);
+  }
+}
+
+@keyframes CarMoves {
+  0% {
+    transform: translateY(3px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(3px);
+  }
+}
